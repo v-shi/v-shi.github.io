@@ -44,7 +44,7 @@ function createGrid(rows, cols, sounds) {
         });*/
         button.addEventListener('click', () => {
             const audio = new Audio(sounds[soundIndex]);
-            
+
             audio.currentTime = 0;
             audio.play();
 
@@ -55,7 +55,7 @@ function createGrid(rows, cols, sounds) {
 
 
             if(clicked == 1) {
-                if (lastClicked === sounds[soundIndex - 1]) {
+                if (lastClicked === sounds[i]) {
                     score++;
                     alert(`It's a match!`);
                 }
@@ -64,12 +64,11 @@ function createGrid(rows, cols, sounds) {
                 }
                 clicked = 0;
                 lastClicked = null;
-                soundIndex++;
             }
 
             else {
                 clicked = 1;
-                lastClicked = sounds[soundIndex - 1];
+                lastClicked = sounds[i];
             }
 
             soundIndex++;
