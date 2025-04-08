@@ -1,6 +1,6 @@
 
 function gameStart() {
-    createGrid(5, 5);
+    createGrid(4, 4, sounds);
     scoreboard();
 }
 
@@ -18,8 +18,17 @@ function scoreboard() {
 
 var score = 0;
 
-function createGrid(rows, cols) {
+//implemented fisher-yates shuffling algorithm
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function createGrid(rows, cols, sounds) {
     const gridContainer = document.getElementById('grid-container');
+    shuffle(sounds);
 
     const audio = new Audio(sounds[i]);
 
@@ -38,4 +47,5 @@ function createGrid(rows, cols) {
     }
 }
 
-const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
+const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3', 'alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
+//const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
