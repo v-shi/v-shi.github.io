@@ -39,7 +39,6 @@ function createGrid(rows, cols, sounds) {
         button.textContent = `Sound ${i + 1}`;
 
         const audio = new Audio(sounds[soundIndex]);
-        soundIndex++;
         /*
         button.addEventListener('click', () => {
             alert(`Button ${i + 1} clicked!`);
@@ -72,6 +71,7 @@ function createGrid(rows, cols, sounds) {
                 lastClicked = sounds[soundIndex - 1];
             }
 
+            soundIndex++;
             updateScore();
 
 
