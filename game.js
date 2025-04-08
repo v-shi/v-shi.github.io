@@ -1,6 +1,7 @@
 let score = 0;
 let lastClicked = null;
 let clicked = 0;
+let soundIndex = 0;
 
 function gameStart() {
     const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
@@ -37,7 +38,6 @@ function createGrid(rows, cols, sounds) {
         button.classList.add('button');
         button.textContent = `Sound ${i + 1}`;
 
-        let soundIndex = 0;
         const audio = new Audio(sounds[soundIndex]);
         soundIndex++;
         /*
