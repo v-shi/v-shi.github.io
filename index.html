@@ -3,6 +3,12 @@
     h1 {
      color: pink;
      text-align:center;
+     font-size:60px;
+   }
+
+   h2 {
+     color: black;
+     text-align:center;
      font-size:30px;
    }
    
@@ -21,6 +27,31 @@
    </style></head>
 
 <body>
-
+    <h1> </h1>
     <h1>memory game :D</h1>
+
+    <a class="button" href="javascript:rules()">Show Rules</a>
+    <button onclick="hideRules()">Hide</button>
+
+    <div id="rules">
+        <h2>Rules</h2>
+        <h3>Follows the same rules as "Memory". Instead of matching images, you will be matching sounds. For 2 sounds you think are the same, you click the buttons consecutively to make a match. If correct your score will increase by 1 until all the pairs have been matched.</h3>
+    </div>
+
+
 </body>
+
+
+<script>
+    function rules() {
+        var rules = document.getElementById("rules");
+        rules.style.display = "block";
+    }
+
+    function hideRules() {
+        var rules = document.getElementById("rules");
+        rules.style.display = "none";
+    }
+
+
+</script>
