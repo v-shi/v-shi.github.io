@@ -55,6 +55,9 @@ function createGrid(rows, cols, sounds) {
                 audio.currentTime = 0;
             }, 3000);
 
+            button.style.backgroundColor = 'teal';
+            button.style.color = 'white';
+
 
             if(clicked == 1) {
                 if (lastClicked == sounds[i]) {
