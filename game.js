@@ -38,12 +38,14 @@ function createGrid(rows, cols, sounds) {
         button.classList.add('button');
         button.textContent = `Sound ${i + 1}`;
 
+        const audio = new Audio(sounds[soundIndex]);
+
         /*
         button.addEventListener('click', () => {
             alert(`Button ${i + 1} clicked!`);
         });*/
         button.addEventListener('click', () => {
-            const audio = new Audio(sounds[soundIndex]);
+            //const audio = new Audio(sounds[soundIndex]);
 
             audio.currentTime = 0;
             audio.play();
