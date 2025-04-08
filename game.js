@@ -30,12 +30,13 @@ function createGrid(rows, cols, sounds) {
     const gridContainer = document.getElementById('grid-container');
     shuffle(sounds);
 
-    const audio = new Audio(sounds[i]);
-
     for (let i = 0; i < rows * cols; i++) {
         const button = document.createElement('button');
         button.classList.add('button');
         button.textContent = `Button ${i + 1}`;
+
+        const audio = new Audio(sounds[i]);
+
         /*
         button.addEventListener('click', () => {
             alert(`Button ${i + 1} clicked!`);
