@@ -1,6 +1,6 @@
 
 function gameStart() {
-    createGrid(4, 4);
+    createGrid(5, 5);
     scoreboard();
 }
 
@@ -17,3 +17,25 @@ function scoreboard() {
   }
 
 var score = 0;
+
+function createGrid(rows, cols) {
+    const gridContainer = document.getElementById('grid-container');
+
+    const audio = new Audio(sounds[i]);
+
+    for (let i = 0; i < rows * cols; i++) {
+        const button = document.createElement('button');
+        button.classList.add('button');
+        button.textContent = `Button ${i + 1}`;
+        /*
+        button.addEventListener('click', () => {
+            alert(`Button ${i + 1} clicked!`);
+        });*/
+        button.addEventListener('click', () => {
+            audio.play();
+        });
+        gridContainer.appendChild(button);
+    }
+}
+
+const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
