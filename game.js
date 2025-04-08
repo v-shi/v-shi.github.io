@@ -1,6 +1,6 @@
-var score = 0;
-var lastClicked = null;
-var clicked = 0;
+let score = 0;
+let lastClicked = null;
+let clicked = 0;
 
 function gameStart() {
     const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
