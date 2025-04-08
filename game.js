@@ -55,7 +55,7 @@ function createGrid(rows, cols, sounds) {
 
 
             if(clicked == 1) {
-                if (lastClicked === sounds[i]) {
+                if (lastClicked == sounds[i]) {
                     score++;
                     alert(`It's a match!`);
                 }
