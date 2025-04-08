@@ -56,4 +56,3 @@ function createGrid(rows, cols, sounds) {
 }
 
 const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3', 'alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
-//const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
