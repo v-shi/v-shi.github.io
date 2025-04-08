@@ -1,11 +1,6 @@
-var canvas = document.getElementById('canvas');
-var cx = canvas.getContext('2d');
-//canvas.width = 1000;
-//canvas.height = 700;
-
 function gameStart() {
     createGrid(4, 4, sounds);
-    scoreboard();
+    //scoreboard();
 }
 
 function gameOver() {
