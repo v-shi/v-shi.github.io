@@ -58,12 +58,15 @@ function createGrid(rows, cols, sounds) {
                 if (lastClicked === sounds[soundIndex - 1]) {
                     score++;
                     alert(`It's a match!`);
-                } else {
+                }
+                else {
                     alert('No match');
                 }
                 clicked = 0;
                 lastClicked = null;
+                soundIndex++;
             }
+
             else {
                 clicked = 1;
                 lastClicked = sounds[soundIndex - 1];
