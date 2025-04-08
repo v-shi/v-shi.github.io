@@ -23,6 +23,10 @@
      background-size:cover;
    }
 
+   #text-center {
+    text-align: center;
+    }
+
     
    
    </style></head>
@@ -34,8 +38,10 @@
     <!--
         <a class="button" href="javascript:rules()">Show Rules</a>
     -->
-    <button onclick-"showRules()">Show Rules</button>
-    <button onclick="hideRules()">Hide</button>
+    <div class="text-center">
+        <button onclick="showRules()">show rules</button>
+        <button onclick="hideRules()">Hide</button>
+      </div>
 
     <div id="rules">
         <h2>Rules</h2>
