@@ -42,7 +42,13 @@ function createGrid(rows, cols, sounds) {
             alert(`Button ${i + 1} clicked!`);
         });*/
         button.addEventListener('click', () => {
+            audio.currentTime = 0;
             audio.play();
+
+            setTimeout(() => {
+                audio.pause();
+                audio.currentTime = 0;
+            }, 3000);
         });
         gridContainer.appendChild(button);
     }
