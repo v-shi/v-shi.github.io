@@ -1,4 +1,14 @@
 
+function gameStart() {
+    createGrid(4, 4);
+    scoreboard();
+}
+
+function gameOver() {
+    cx.fillstyle = "pink";
+    cx.font = "25px cursive";
+    cx.fillText("Game Over!" ,20,40);
+  }
 
 function scoreboard() {
     cx.fillStyle = "pink";
@@ -6,7 +16,7 @@ function scoreboard() {
     cx.fillText("Score:"+score, 100, 100);
   }
 
-  var score = 0;
+var score = 0;
 
 function createGrid(rows, cols) {
     const gridContainer = document.getElementById('grid-container');
@@ -21,5 +31,3 @@ function createGrid(rows, cols) {
         gridContainer.appendChild(button);
     }
 }
-
-createGrid(4, 4);
