@@ -35,7 +35,7 @@ function createGrid(rows, cols, sounds) {
     for (let i = 0; i < rows * cols; i++) {
         const button = document.createElement('button');
         button.classList.add('button');
-        button.textContent = `Button ${i + 1}`;
+        button.textContent = `Sound ${i + 1}`;
 
         let soundIndex = 0;
         const audio = new Audio(sounds[soundIndex]);
