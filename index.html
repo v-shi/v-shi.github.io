@@ -26,11 +26,13 @@
     .button {
         display:inline-block;
         text-align:center;
-        font-size:30px;
+        font-size:10px;
+        background-color:white;
         padding:30,45;
         margin:5;
-        border-radius:120px;
+        border-radius:30px;
         text-decoration:none;
+        color:black;
     }
 
     #rules {
@@ -44,7 +46,10 @@
     <h1> </h1>
     <h1>memory game :D</h1>
 
-    <a class="button" href="javascript:rules()">Show Rules</a>
+    <!--
+        <a class="button" href="javascript:rules()">Show Rules</a>
+    -->
+    <button onclick-"showRules()">Show Rules</button>
     <button onclick="hideRules()">Hide</button>
 
     <div id="rules">
@@ -60,9 +65,9 @@
 
 
 <script>
-    function rules() {
+    function showRules() {
         var rules = document.getElementById("rules");
-        rules.style.display = "block";
+        rules.style.display = "none";
     }
 
     function hideRules() {
