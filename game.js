@@ -1,21 +1,22 @@
+var score = 0;
+var lastClicked = null;
+var clicked = 0;
+
 function gameStart() {
+    const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
+        'night.mp3','stylish.mp3','summer.mp3','vlog.mp3',
+        'alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
+        'night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
     createGrid(4, 4, sounds);
-    //scoreboard();
+    //displayScore();
+    //gameOver();
 }
 
-function gameOver() {
-    cx.fillstyle = "pink";
-    cx.font = "25px cursive";
-    cx.fillText("Game Over!" ,20,40);
-  }
+function updateScore() {
+    const scoreDisplay = document.getElementById('score');
+    scoreDisplay.textContent = `Score: ${score}`;
+}
 
-function scoreboard() {
-    cx.fillStyle = "pink";
-    cx.font = "30px cursive";
-    cx.fillText("Score:"+score, 100, 100);
-  }
-
-var score = 0;
 
 //implemented fisher-yates shuffling algorithm
 function shuffle(array) {
@@ -36,8 +37,9 @@ function createGrid(rows, cols, sounds) {
         button.classList.add('button');
         button.textContent = `Button ${i + 1}`;
 
-        const audio = new Audio(sounds[i]);
-
+        let soundIndex = 0;
+        const audio = new Audio(sounds[soundIndex]);
+        soundIndex++;
         /*
         button.addEventListener('click', () => {
             alert(`Button ${i + 1} clicked!`);
@@ -50,9 +52,28 @@ function createGrid(rows, cols, sounds) {
                 audio.pause();
                 audio.currentTime = 0;
             }, 3000);
+
+
+            if(clicked == 1) {
+                if (lastClicked === sounds[soundIndex - 1]) {
+                    score++;
+                    alert(`It's a match!`);
+                } else {
+                    alert('No match');
+                }
+                clicked = 0;
+                lastClicked = null;
+            }
+            else {
+                clicked = 1;
+                lastClicked = sounds[soundIndex - 1];
+            }
+
+            updateScore();
+
+
         });
+
         gridContainer.appendChild(button);
     }
 }
-
-const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3', 'alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3','night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
