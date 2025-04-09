@@ -71,11 +71,13 @@ function createGrid(rows, cols, sounds) {
                 }
                 clicked = 0;
                 lastClicked = null;
+                prevButton = null;
             }
 
             else {
                 clicked = 1;
                 lastClicked = sounds[i];
+                prevButton = button;
             }
 
             soundIndex++;
