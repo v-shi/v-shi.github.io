@@ -10,13 +10,21 @@ function gameStart() {
         'alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
         'night.mp3','stylish.mp3','summer.mp3','vlog.mp3'];
     createGrid(4, 4, sounds);
-    //displayScore();
-    //gameOver();
+
 }
 
 function updateScore() {
     const scoreDisplay = document.getElementById('score');
     scoreDisplay.textContent = `Score: ${score}`;
+}
+
+function gameOver() {
+    alert("game over! you've found all the matches! ");
+    const gridContainer = document.getElementById('grid-container');
+    const buttons = gridContainer.getElementsByTagName('button');
+    for (let button of buttons) {
+        button.disabled = true;
+    }
 }
 
 
@@ -41,12 +49,7 @@ function createGrid(rows, cols, sounds) {
 
         const audio = new Audio(sounds[i]);
 
-        /*
         button.addEventListener('click', () => {
-            alert(`Button ${i + 1} clicked!`);
-        });*/
-        button.addEventListener('click', () => {
-            //const audio = new Audio(sounds[soundIndex]);
 
             audio.currentTime = 0;
             audio.play();
@@ -58,20 +61,26 @@ function createGrid(rows, cols, sounds) {
 
 
             if(clicked == 1) {
-                if (lastClicked == sounds[i]) {
+                if (lastClicked === sounds[i]) {
                     button.style.backgroundColor = 'teal';
                     button.style.color = 'white';
                     prevButton.style.backgroundColor = 'teal';
                     prevButton.style.color = 'white';
+
                     score++;
                     alert(`It's a match!`);
                 }
                 else {
                     alert('No match');
                 }
+
                 clicked = 0;
                 lastClicked = null;
                 prevButton = null;
+
+                if (score === 8) {
+                    gameOver();
+                }
             }
 
             else {
