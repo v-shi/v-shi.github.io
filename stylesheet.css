@@ -24,3 +24,11 @@
 .button:active {
     background-color: pink;
 }
+
+.score {
+    justify-content: center;
+    place-content: center;
+    align-items: center;
+    font-size: 20px;
+
+}
