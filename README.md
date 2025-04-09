@@ -1,7 +1,7 @@
 # v-shi.github.io
-capstone project component
+for capstone
 
-memory game using html + javascript + css
+memory game (with audio clips instead of images) using html + javascript + css
 
 references used:
 https://youtu.be/xWdkt6KSirw?si=qw72pexwLRXqovPt, 
