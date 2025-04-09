@@ -38,7 +38,7 @@ function createGrid(rows, cols, sounds) {
         button.classList.add('button');
         button.textContent = `Sound ${i + 1}`;
 
-        const audio = new Audio(sounds[soundIndex]);
+        const audio = new Audio(sounds[i]);
 
         /*
         button.addEventListener('click', () => {
@@ -55,12 +55,11 @@ function createGrid(rows, cols, sounds) {
                 audio.currentTime = 0;
             }, 3000);
 
-            button.style.backgroundColor = 'teal';
-            button.style.color = 'white';
-
 
             if(clicked == 1) {
                 if (lastClicked == sounds[i]) {
+                    button.style.backgroundColor = 'teal';
+                    button.style.color = 'white';
                     score++;
                     alert(`It's a match!`);
                 }
