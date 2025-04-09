@@ -2,6 +2,7 @@ let score = 0;
 let lastClicked = null;
 let clicked = 0;
 let soundIndex = 0;
+let prevButton = null;
 
 function gameStart() {
     const sounds = ['alone.mp3', 'chill.mp3','glorila.mp3','groovy.mp3',
@@ -60,6 +61,8 @@ function createGrid(rows, cols, sounds) {
                 if (lastClicked == sounds[i]) {
                     button.style.backgroundColor = 'teal';
                     button.style.color = 'white';
+                    prevButton.style.backgroundColor = 'teal';
+                    prevButton.style.color = 'white';
                     score++;
                     alert(`It's a match!`);
                 }
