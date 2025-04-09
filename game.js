@@ -68,6 +68,8 @@ function createGrid(rows, cols, sounds) {
                     prevButton.style.color = 'white';
 
                     score++;
+                    button.disabled = true;
+                    prevButton.disabled = true;
                     alert(`It's a match!`);
                 }
                 else {
